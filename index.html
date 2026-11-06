@@ -1,0 +1,1274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Medicos Plus Relationship Compatibility Assessment – a two-person self-reflection questionnaire covering personality, attachment, satisfaction, values, communication and financial/family expectations.">
+<meta name="theme-color" content="#060f28">
+<title>Medicos Plus – Relationship Compatibility Assessment | Discover How You Two Fit</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%92%9E%3C/text%3E%3C/svg%3E">
+
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+:root {
+  --gold: #f5c842;
+  --gold-light: #fde68a;
+  --gold-dark: #c9971a;
+  --navy: #060f28;
+  --navy-mid: #0c1a40;
+  --navy-light: #132050;
+  --red: #dc2626;
+  --red-light: #ef4444;
+  --green: #10b981;
+  --muted: rgba(255,255,255,0.5);
+  --border: rgba(245,200,66,0.18);
+  --card-bg: rgba(255,255,255,0.04);
+}
+
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+
+body{
+  font-family:'DM Sans',sans-serif;
+  background:#000000;
+  color:white;
+  min-height:100vh;
+  overflow-x:hidden;
+}
+
+/* ── PARTICLES ── */
+#particles{
+  position:fixed;top:0;left:0;
+  width:100%;height:100%;
+  pointer-events:none;z-index:0;opacity:0.25;
+}
+
+/* ── LANDING PAGE ── */
+#landing-page{
+  position:relative;z-index:1;
+  max-width:520px;margin:0 auto;
+  padding-bottom:56px;
+}
+
+/* TOP NAV */
+.lp-topbar{
+  background:rgba(6,15,40,0.9);
+  backdrop-filter:blur(16px);
+  border-bottom:1px solid var(--border);
+  padding:14px 24px;
+  display:flex;align-items:center;justify-content:space-between;
+  position:sticky;top:0;z-index:100;
+}
+.lp-logo-group{display:flex;align-items:center;gap:11px;}
+.lp-logo-badge{
+  width:38px;height:38px;
+  background:linear-gradient(135deg,#b91c1c,#ef4444);
+  border-radius:10px;
+  display:flex;align-items:center;justify-content:center;
+  position:relative;
+  box-shadow:0 4px 16px rgba(220,38,38,0.45);
+}
+.lp-logo-badge svg{width:22px;height:22px;fill:white;}
+.lp-logo-text{}
+.lp-logo-name{
+  font-family:'Cormorant Garamond',serif;
+  font-size:18px;font-weight:700;
+  color:white;letter-spacing:1.5px;line-height:1;
+}
+.lp-logo-name span{color:var(--gold);}
+.lp-logo-tag{font-size:8.5px;color:var(--muted);letter-spacing:1.8px;text-transform:uppercase;margin-top:2px;}
+.lp-topbar-badge{
+  background:rgba(245,200,66,0.1);
+  border:1px solid rgba(245,200,66,0.3);
+  border-radius:8px;padding:5px 12px;
+  font-size:9px;color:var(--gold);
+  letter-spacing:1px;text-transform:uppercase;font-weight:600;
+}
+
+/* HERO */
+.lp-hero{padding:52px 24px 36px;text-align:center;}
+
+.lp-badge-strip{
+  display:inline-flex;align-items:center;gap:8px;
+  background:rgba(255,255,255,0.05);
+  border:1px solid var(--border);
+  border-radius:50px;padding:7px 20px;
+  font-size:11px;color:var(--gold-light);
+  margin-bottom:26px;
+  animation:fadeDown 0.6s ease both;
+}
+.lp-live-dot{
+  width:7px;height:7px;border-radius:50%;
+  background:var(--green);
+  animation:blink 1.8s infinite;
+}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0.25}}
+
+.lp-eyebrow{
+  font-size:12px;color:var(--muted);
+  letter-spacing:0.5px;line-height:1.9;
+  margin-bottom:12px;
+  animation:fadeDown 0.6s 0.1s ease both;
+}
+.lp-eyebrow strong{color:var(--gold-light);font-weight:600;}
+
+.lp-title{
+  font-family:'Cormorant Garamond',serif;
+  font-size:52px;font-weight:700;
+  line-height:1.12;margin-bottom:12px;
+  animation:fadeDown 0.6s 0.2s ease both;
+  letter-spacing:-0.5px;
+}
+.lp-title .highlight{
+  color:var(--gold);
+  text-shadow:0 0 60px rgba(245,200,66,0.3);
+}
+.lp-title .dim{color:rgba(255,255,255,0.65);}
+
+.lp-take-test{
+  font-family:'Cormorant Garamond',serif;
+  font-size:28px;font-weight:600;
+  color:rgba(255,255,255,0.72);
+  letter-spacing:1px;
+  margin-bottom:14px;
+  animation:fadeDown 0.6s 0.28s ease both;
+}
+
+.lp-subtitle{
+  font-size:14px;color:var(--muted);
+  line-height:1.8;margin-bottom:32px;
+  animation:fadeDown 0.6s 0.3s ease both;
+}
+
+/* TRUST PILLS */
+.lp-pills{
+  display:flex;flex-wrap:wrap;gap:8px;justify-content:center;
+  margin-bottom:38px;
+  animation:fadeDown 0.6s 0.4s ease both;
+}
+.lp-pill{
+  display:flex;align-items:center;gap:6px;
+  background:rgba(255,255,255,0.04);
+  border:1px solid rgba(255,255,255,0.1);
+  border-radius:50px;padding:6px 15px;
+  font-size:11px;color:rgba(255,255,255,0.68);
+}
+.lp-pill-icon{font-size:13px;}
+
+/* HERO IMAGE */
+.lp-hero-img-wrap{
+  width:320px;height:340px;
+  margin:0 auto 38px;
+  position:relative;
+  animation:fadeDown 0.7s 0.35s ease both;
+}
+.lp-hero-img{
+  width:100%;height:100%;
+  object-fit:contain;
+  object-position:center top;
+  display:block;
+  position:relative;z-index:2;
+  filter:drop-shadow(0 0 40px rgba(100,200,255,0.3)) drop-shadow(0 0 80px rgba(100,200,255,0.15));
+}
+.lp-hero-img-glow{
+  position:absolute;inset:-16px;
+  border-radius:50%;
+  background:radial-gradient(ellipse at center, rgba(100,200,255,0.08) 0%, transparent 70%);
+  animation:pulseGlow 3s ease-in-out infinite;
+  z-index:1;
+}
+@keyframes pulseGlow{0%,100%{opacity:0.6;transform:scale(1)}50%{opacity:1;transform:scale(1.04)}}
+@keyframes spinSlow{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+
+/* CTA BUTTON */
+.lp-cta-wrap{padding:0 24px;margin-bottom:26px;animation:fadeUp 0.7s 0.5s ease both;}
+.lp-cta-btn{
+  display:block;width:100%;
+  background:linear-gradient(135deg,var(--gold) 0%,var(--gold-dark) 100%);
+  color:var(--navy);text-align:center;
+  font-family:'DM Sans',sans-serif;
+  font-size:17px;font-weight:700;letter-spacing:0.5px;
+  padding:19px 28px;border-radius:16px;border:none;cursor:pointer;
+  box-shadow:0 8px 40px rgba(245,200,66,0.4),0 2px 8px rgba(0,0,0,0.3);
+  transition:transform 0.18s,box-shadow 0.18s;
+  position:relative;overflow:hidden;
+}
+.lp-cta-btn::after{
+  content:'';
+  position:absolute;top:0;left:-100%;
+  width:55%;height:100%;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,0.3),transparent);
+  transform:skewX(-20deg);
+  animation:shimmer 2.5s infinite;
+}
+@keyframes shimmer{0%{left:-100%}55%,100%{left:140%}}
+.lp-cta-btn:hover{transform:translateY(-3px);box-shadow:0 14px 48px rgba(245,200,66,0.55);}
+.lp-cta-btn:active{transform:translateY(0);}
+.lp-cta-sub{text-align:center;font-size:11px;color:var(--muted);margin-top:10px;}
+
+/* DIVIDER */
+.lp-divider{
+  height:1px;
+  background:linear-gradient(90deg,transparent,rgba(245,200,66,0.25),transparent);
+  margin:0 24px 30px;
+}
+
+/* WHAT YOU GET */
+.lp-features{padding:0 24px;margin-bottom:30px;animation:fadeUp 0.7s 0.7s ease both;}
+.lp-section-label{
+  font-size:10px;color:var(--gold);
+  letter-spacing:2.5px;text-transform:uppercase;
+  font-weight:700;text-align:center;margin-bottom:18px;
+}
+.lp-feat-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.lp-feat-card{
+  background:var(--card-bg);
+  border:1px solid rgba(255,255,255,0.08);
+  border-radius:16px;padding:18px 14px;text-align:center;
+  transition:border-color 0.2s,background 0.2s,transform 0.2s;
+}
+.lp-feat-card:hover{
+  border-color:rgba(245,200,66,0.3);
+  background:rgba(245,200,66,0.04);
+  transform:translateY(-2px);
+}
+.lp-feat-icon{display:flex;align-items:center;justify-content:center;margin-bottom:12px;height:36px;}
+.lp-feat-title{font-size:12.5px;font-weight:700;color:white;margin-bottom:4px;line-height:1.4;}
+.lp-feat-desc{font-size:10.5px;color:var(--muted);line-height:1.65;}
+
+/* HOW IT WORKS */
+.lp-steps{padding:0 24px;margin-bottom:30px;animation:fadeUp 0.7s 0.85s ease both;}
+.lp-step-row{display:flex;align-items:flex-start;gap:16px;margin-bottom:18px;}
+.lp-step-num{
+  width:36px;height:36px;border-radius:50%;
+  background:rgba(245,200,66,0.1);
+  border:1px solid rgba(245,200,66,0.35);
+  display:flex;align-items:center;justify-content:center;
+  flex-shrink:0;
+  color:var(--gold);
+}
+.lp-step-title{font-size:13.5px;font-weight:700;color:white;margin-bottom:3px;}
+.lp-step-desc{font-size:11px;color:var(--muted);line-height:1.65;}
+
+/* FINAL CTA BLOCK */
+.lp-final-cta{
+  margin:0 24px;
+  background:linear-gradient(135deg,rgba(12,26,64,0.95),rgba(20,35,60,0.95));
+  border:1px solid rgba(245,200,66,0.22);
+  border-radius:22px;padding:32px 24px;text-align:center;
+  animation:fadeUp 0.7s 1s ease both;
+  position:relative;overflow:hidden;
+}
+.lp-final-cta::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:2px;
+  background:linear-gradient(90deg,transparent,var(--gold),transparent);
+}
+.lp-final-title{
+  font-family:'Cormorant Garamond',serif;
+  font-size:22px;font-weight:700;color:white;
+  margin-bottom:8px;line-height:1.35;
+}
+.lp-final-sub{font-size:12.5px;color:var(--muted);margin-bottom:22px;line-height:1.75;}
+.lp-final-btn{
+  display:block;width:100%;
+  background:linear-gradient(135deg,var(--gold),var(--gold-dark));
+  color:var(--navy);font-size:16px;font-weight:700;
+  padding:17px 24px;border-radius:14px;border:none;cursor:pointer;
+  box-shadow:0 6px 28px rgba(245,200,66,0.4);
+  transition:transform 0.18s,box-shadow 0.18s;
+  font-family:'DM Sans',sans-serif;letter-spacing:0.3px;
+  position:relative;overflow:hidden;
+}
+.lp-final-btn::after{
+  content:'';position:absolute;top:0;left:-100%;
+  width:55%;height:100%;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,0.3),transparent);
+  transform:skewX(-20deg);animation:shimmer 2.5s 0.8s infinite;
+}
+.lp-final-btn:hover{transform:translateY(-2px);box-shadow:0 10px 36px rgba(245,200,66,0.55);}
+
+/* FOOTER */
+.lp-footer{
+  text-align:center;padding:28px 24px 0;
+  font-size:11px;color:rgba(255,255,255,0.28);line-height:1.9;
+}
+.lp-footer a{color:rgba(245,200,66,0.5);text-decoration:none;}
+
+/* ── TRANSITION OVERLAY ── */
+#transition-overlay{
+  display:none;position:fixed;inset:0;z-index:999;
+  background:var(--navy);
+  align-items:center;justify-content:center;
+  flex-direction:column;gap:20px;
+}
+#transition-overlay.active{display:flex;}
+.overlay-logo{
+  width:64px;height:64px;border-radius:16px;
+  background:linear-gradient(135deg,#b91c1c,#ef4444);
+  display:flex;align-items:center;justify-content:center;
+  animation:pulse 1s infinite;
+  box-shadow:0 0 40px rgba(220,38,38,0.5);
+}
+.overlay-logo svg{width:36px;height:36px;fill:white;}
+@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.1)}}
+.overlay-text{
+  font-family:'Cormorant Garamond',serif;
+  font-size:20px;color:var(--gold-light);font-weight:600;
+}
+.overlay-sub{font-size:12px;color:var(--muted);}
+.overlay-bar{
+  width:180px;height:3px;background:rgba(255,255,255,0.1);
+  border-radius:3px;overflow:hidden;
+}
+.overlay-bar-fill{
+  height:100%;width:0%;background:var(--gold);
+  border-radius:3px;
+  animation:barFill 1.4s ease forwards;
+}
+@keyframes barFill{to{width:100%}}
+
+/* ── APP SECTION ── */
+#app-section{display:none;position:relative;z-index:1;}
+
+.app-header{
+  background:rgba(6,15,40,0.92);
+  backdrop-filter:blur(16px);
+  border-bottom:1px solid var(--border);
+  padding:14px 28px;
+  display:flex;align-items:center;gap:14px;
+  position:sticky;top:0;z-index:100;
+}
+.app-header-logo{
+  width:34px;height:34px;border-radius:9px;
+  background:linear-gradient(135deg,#b91c1c,#ef4444);
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 3px 12px rgba(220,38,38,0.4);
+}
+.app-header-logo svg{width:20px;height:20px;fill:white;}
+.app-header-name{
+  font-family:'Cormorant Garamond',serif;
+  font-size:17px;font-weight:700;color:white;letter-spacing:1.5px;
+}
+.app-header-name span{color:var(--gold);}
+.app-header-tag{font-size:8px;color:var(--muted);letter-spacing:1.5px;text-transform:uppercase;}
+.back-btn{
+  background:rgba(255,255,255,0.07);
+  border:1px solid rgba(255,255,255,0.14);
+  color:rgba(255,255,255,0.65);
+  padding:7px 16px;border-radius:8px;
+  font-size:12px;cursor:pointer;
+  transition:background 0.2s;margin-left:auto;
+  font-family:'DM Sans',sans-serif;
+}
+.back-btn:hover{background:rgba(255,255,255,0.12);color:white;}
+
+.app-container{max-width:900px;margin:auto;padding:30px;}
+
+.card{
+  background:rgba(255,255,255,0.06);
+  backdrop-filter:blur(12px);
+  padding:28px;border-radius:18px;
+  margin-bottom:22px;
+  box-shadow:0 12px 36px rgba(0,0,0,0.4);
+  border:1px solid rgba(255,255,255,0.07);
+}
+
+
+/* ══════════ Relationship project additions ══════════ */
+.hidden{display:none!important}
+button{font-family:'DM Sans',sans-serif;cursor:pointer;border:none;color:inherit}
+.btn{padding:13px 24px;border-radius:12px;font-size:15px;font-weight:600;transition:transform .15s,opacity .15s}
+.btn:hover:not(:disabled){transform:translateY(-1px)}
+.btn:disabled{opacity:.45;cursor:not-allowed}
+.btn-gold{background:linear-gradient(135deg,var(--gold),var(--gold-dark));color:var(--navy);font-weight:700}
+.btn-ghost{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);color:rgba(255,255,255,.88)}
+.btn-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+.h-serif{font-family:'Cormorant Garamond',serif;font-size:26px;color:var(--gold-light);margin-bottom:14px;line-height:1.25}
+.p-soft{color:rgba(255,255,255,.75);line-height:1.75;margin-bottom:14px;font-size:14.5px}
+.small-muted{font-size:12.5px;color:var(--muted);line-height:1.7}
+.notice{border-left:3px solid var(--gold);background:rgba(245,200,66,.08);padding:12px 14px;border-radius:8px;font-size:13.5px;line-height:1.7;color:rgba(255,255,255,.85);margin:14px 0}
+.notice.error{border-left-color:#ef4444;background:rgba(239,68,68,.1)}
+.notice b{color:var(--gold-light)}
+.field{width:100%;padding:11px 14px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);border-radius:10px;color:#fff;font:14px 'DM Sans',sans-serif}
+textarea.field{min-height:84px;resize:vertical}
+.field:focus{outline:none;border-color:rgba(245,200,66,.5)}
+.step-label{font-size:11px;color:var(--gold);letter-spacing:1.5px;text-transform:uppercase;font-weight:700;margin:22px 0 8px}
+.progress{height:6px;background:rgba(255,255,255,.1);border-radius:5px;margin:12px 0 18px}
+.progress-bar{height:6px;background:linear-gradient(90deg,var(--gold),var(--red));width:0%;border-radius:5px;transition:width .3s ease}
+.person-tabs{display:flex;gap:8px;margin-bottom:16px}
+.tab{flex:1;padding:11px;border-radius:10px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);font-size:14px;font-weight:600;color:rgba(255,255,255,.7)}
+.tab.active{background:rgba(245,200,66,.14);border-color:rgba(245,200,66,.5);color:var(--gold-light)}
+.tab:disabled{opacity:.5;cursor:not-allowed}
+.q-domain{font-size:11px;color:var(--gold);letter-spacing:1.5px;text-transform:uppercase;margin:6px 0 8px;font-weight:700}
+.q-text{font-size:18px;line-height:1.6;font-weight:600;margin:10px 0 8px}
+.options{margin-top:12px}
+.option{display:flex;gap:12px;align-items:center;padding:12px 16px;border-radius:10px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);cursor:pointer;margin:8px 0;font-size:15px;transition:background .2s,border-color .2s}
+.option:hover{background:rgba(245,200,66,.07);border-color:rgba(245,200,66,.25)}
+.option.selected{border-color:var(--gold);background:rgba(245,200,66,.13)}
+.option input{accent-color:var(--gold);width:18px;height:18px;margin:0;flex-shrink:0}
+.nav{display:flex;justify-content:space-between;gap:10px;margin-top:20px}
+.agree-row{display:flex;align-items:flex-start;gap:10px;cursor:pointer;color:rgba(255,255,255,.82);font-size:14px;line-height:1.6;margin:18px 0}
+.agree-row input{accent-color:var(--gold);width:18px;height:18px;margin-top:2px;flex-shrink:0}
+.app-footer{font-size:11.5px;color:rgba(255,255,255,.42);line-height:1.8;padding:6px 4px 30px}
+.price-big{font-family:'Cormorant Garamond',serif;font-size:44px;font-weight:700;color:var(--gold);line-height:1;margin:6px 0 16px}
+.lp-cta-alt{display:block;width:100%;margin-top:12px;background:rgba(255,255,255,.06);border:1px solid rgba(245,200,66,.35);color:var(--gold-light);padding:15px 20px;border-radius:14px;font-size:15px;font-weight:600;font-family:'DM Sans',sans-serif;transition:background .2s}
+.lp-cta-alt:hover{background:rgba(245,200,66,.1)}
+.lp-partner-banner{margin:0 24px 22px;padding:16px 18px;border-radius:14px;background:rgba(245,200,66,.08);border:1px solid rgba(245,200,66,.3);font-size:13px;line-height:1.7;color:rgba(255,255,255,.85);text-align:left}
+.lp-partner-banner b{color:var(--gold-light)}
+.lp-hero-img{filter:drop-shadow(0 0 40px rgba(245,200,66,.25)) drop-shadow(0 0 80px rgba(100,160,255,.15))}
+#pdfStage{position:fixed;left:-9999px;top:0;width:794px;background:#fff;z-index:-1}
+.pdf-head{background:#1a1a2e;color:#fff;padding:20px 26px;border-radius:10px;margin-bottom:18px}
+.pdf-brand{font-size:19px;font-weight:700;letter-spacing:1px}
+.pdf-brand span{color:#f5c842}
+.pdf-sub{font-size:12px;color:rgba(255,255,255,.78);margin-top:5px}
+
+/* ══════════ Report "paper" (original report styling, scoped so it keeps its light look) ══════════ */
+</style>
+<style id="reportCss">
+.paper{--ink:#172033;--muted:#657087;--line:#dce2ec;--panel:#f5f7fb;--accent:#3157c8;--good:#16794b;--warn:#a65b00;--bad:#b42318;background:#fff;color:var(--ink);border-radius:16px;padding:22px;font:16px/1.5 system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.paper h2{font-size:1.35rem;margin:0 0 12px;color:var(--ink);font-family:inherit;font-weight:700}
+.paper h3{font-size:1.05rem;margin:18px 0 8px;color:var(--ink);font-weight:700}
+.paper p{margin:8px 0}
+.paper .muted,.paper .small{color:var(--muted)}.paper .small{font-size:.88rem}
+.paper table{width:100%;border-collapse:collapse;margin:10px 0;font-size:.94rem}
+.paper th,.paper td{text-align:left;padding:9px;border-bottom:1px solid var(--line);color:var(--ink);font-size:inherit}
+.paper th{background:var(--panel)}
+.paper .big{font-size:1.8rem;font-weight:800}
+.paper .bar{height:9px;background:#e8ebf2;border-radius:10px;overflow:hidden}
+.paper .bar span{display:block;height:100%;background:#3d69d9}
+.paper .alert{border-left:4px solid var(--warn);padding:10px 13px;background:#fff8ed;border-radius:7px;margin:10px 0}
+.paper .report-intro{background:linear-gradient(135deg,#eef3ff,#f7f9ff);border:1px solid #dce5ff;border-radius:14px;padding:16px;margin:12px 0 18px}
+.paper .report-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin:12px 0}
+.paper .report-card{border:1px solid var(--line);border-radius:13px;padding:14px;background:#fff}
+.paper .report-card h4{margin:0 0 8px;font-size:1rem}
+.paper .scoreline{display:grid;grid-template-columns:130px 1fr 84px;gap:8px;align-items:center;margin:9px 0;font-size:.9rem}
+.paper .scoreline b{white-space:nowrap;text-align:right}
+.paper .track{display:block;padding:3px;border-radius:10px;background:#edf0f5}
+.paper .fill-a,.paper .fill-b{display:block;height:8px;border-radius:20px}.paper .fill-a{background:#4267d5;margin-bottom:3px}.paper .fill-b{background:#13a078}
+.paper .legend{display:flex;gap:14px;flex-wrap:wrap;font-size:.82rem;color:var(--muted);margin:8px 0}
+.paper .legend span:before{content:"";display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:5px;background:#4267d5}
+.paper .legend span.b:before{background:#13a078}
+.paper .tag{display:inline-block;padding:4px 8px;border-radius:99px;font-size:.78rem;font-weight:700;background:#edf1f7;color:#45516a}
+.paper .tag.good{background:#e8f6ee;color:#16794b}.paper .tag.watch{background:#fff3df;color:#925300}.paper .tag.high{background:#fdeceb;color:#a32920}
+.paper .insight{border-left:4px solid #4267d5;background:#f5f7ff;padding:12px 14px;border-radius:8px;margin:10px 0}
+.paper .insight.warn{border-left-color:#d18a20;background:#fff9ef}
+.paper .insight.good{border-left-color:#219765;background:#f0faf5}
+.paper .simple-steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px;margin:12px 0}
+.paper .simple-steps div{padding:11px;border-radius:10px;background:var(--panel);font-size:.9rem}
+.paper .simple-steps b{display:block;margin-bottom:4px}
+.paper .domain-head{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin-top:22px}
+.paper .domain-head h3{margin:0}
+@media(max-width:540px){.paper .scoreline{grid-template-columns:1fr auto;font-size:.85rem;row-gap:4px}.paper .scoreline>span{grid-area:1/1}.paper .scoreline>b{grid-area:1/2}.paper .scoreline>.track{grid-area:2/1/3/3}.paper .report-card{padding:11px}.paper{padding:16px}}
+</style>
+<style>
+@media print{
+  body{background:#fff!important}
+  #particles,#landing-page,.app-header,.no-print,#transition-overlay,.app-footer,#pdfStage{display:none!important}
+  #app-section{display:block!important}
+  .app-container{max-width:none;padding:0}
+  .paper{border-radius:0;padding:0}
+  .paper .report-card,.paper .insight,.paper .alert{break-inside:avoid}
+}
+</style>
+</head>
+<body>
+
+<canvas id="particles"></canvas>
+
+<!-- ═══════════════ LANDING PAGE ═══════════════ -->
+<div id="landing-page">
+
+  <nav class="lp-topbar">
+    <div class="lp-logo-group">
+      <div class="lp-logo-badge">
+        <svg viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm4 11h-3v3a1 1 0 01-2 0v-3H8a1 1 0 010-2h3V8a1 1 0 012 0v3h3a1 1 0 010 2z"/></svg>
+      </div>
+      <div class="lp-logo-text">
+        <div class="lp-logo-name">MEDICOS<span>PLUS</span></div>
+        <div class="lp-logo-tag">Journey To Excellence</div>
+      </div>
+    </div>
+    <div class="lp-topbar-badge">💞 Couples assessment</div>
+  </nav>
+
+  <section class="lp-hero">
+    <div class="lp-badge-strip">
+      <span class="lp-live-dot"></span>
+      Private self-reflection · No account needed
+    </div>
+
+    <p class="lp-eyebrow"><strong>Medicos Plus</strong> · Relationship Compatibility Assessment</p>
+
+    <h1 class="lp-title">
+      Discover How<br>
+      <span class="highlight">You Two</span><span class="dim"> Fit</span><br>
+      <span class="highlight">Together</span>
+    </h1>
+
+    <p class="lp-take-test">Take the Compatibility Test</p>
+
+    <p class="lp-subtitle">
+      A two-person self-reflection across personality, attachment,<br>
+      satisfaction, values, communication and money &amp; family expectations.
+    </p>
+
+    <div class="lp-hero-img-wrap">
+      <svg class="lp-hero-img" viewBox="0 0 320 340" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Two overlapping circles with a heart">
+        <defs>
+          <radialGradient id="lens" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#f5c842" stop-opacity=".45"/><stop offset="1" stop-color="#f5c842" stop-opacity=".05"/></radialGradient>
+          <linearGradient id="heartG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fde68a"/><stop offset="1" stop-color="#c9971a"/></linearGradient>
+        </defs>
+        <circle cx="122" cy="172" r="88" fill="rgba(245,200,66,.07)" stroke="#f5c842" stroke-width="2.5"/>
+        <circle cx="198" cy="172" r="88" fill="rgba(80,150,255,.08)" stroke="#5aa0ff" stroke-width="2.5"/>
+        <path d="M160 108 A88 88 0 0 1 160 236 A88 88 0 0 1 160 108 Z" fill="url(#lens)"/>
+        <path d="M160 214 C118 184,126 148,147 150 C155 151,160 158,160 163 C160 158,165 151,173 150 C194 148,202 184,160 214 Z" fill="url(#heartG)"/>
+        <g fill="#fde68a"><circle cx="48" cy="70" r="2.5"/><circle cx="278" cy="92" r="2"/><circle cx="262" cy="288" r="2.5"/><circle cx="56" cy="280" r="2"/><circle cx="160" cy="40" r="2"/></g>
+        <text x="64" y="176" fill="#fde68a" font-family="DM Sans,Arial" font-size="20" font-weight="700" text-anchor="middle">A</text>
+        <text x="256" y="176" fill="#9cc4ff" font-family="DM Sans,Arial" font-size="20" font-weight="700" text-anchor="middle">B</text>
+      </svg>
+      <div class="lp-hero-img-glow"></div>
+    </div>
+
+    <div class="lp-pills">
+      <div class="lp-pill">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
+        120 Questions Each
+      </div>
+      <div class="lp-pill">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+        6 Relationship Dimensions
+      </div>
+      <div class="lp-pill">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+        Private &amp; No Sign-up
+      </div>
+      <div class="lp-pill">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+        Downloadable PDF Report
+      </div>
+    </div>
+  </section>
+
+  <!-- Invited partner banner (only when ?role=partner) -->
+  <div id="lp-partner-banner" class="lp-partner-banner hidden">
+    <b>You've been invited as Person B.</b><br>
+    Complete the questionnaire on your own. You will not see Person A's answers. When you finish, you'll get a results link to send back to the person who invited you.
+  </div>
+
+  <div class="lp-cta-wrap">
+    <div id="lp-cta-default">
+      <button class="lp-cta-btn" onclick="launch('device')">✦ &nbsp;Start Together on This Device&nbsp; ✦</button>
+      <button class="lp-cta-alt" onclick="launch('invite')">🌍 Long-distance? Invite your partner</button>
+      <p class="lp-cta-sub">Unlock a detailed side-by-side compatibility report</p>
+    </div>
+    <div id="lp-cta-partner" class="hidden">
+      <button class="lp-cta-btn" onclick="launch('partner')">✦ &nbsp;Start Partner Questionnaire&nbsp; ✦</button>
+    </div>
+  </div>
+
+  <div class="lp-divider"></div>
+
+  <div class="lp-features">
+    <p class="lp-section-label">✦ What You'll Discover</p>
+    <div class="lp-feat-grid">
+      <div class="lp-feat-card">
+        <div class="lp-feat-icon">
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#f5c842" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+        </div>
+        <div class="lp-feat-title">Personality<br>Patterns</div>
+        <div class="lp-feat-desc">Big Five traits compared side by side: openness, reactivity and more.</div>
+      </div>
+      <div class="lp-feat-card">
+        <div class="lp-feat-icon">
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#f5c842" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+        </div>
+        <div class="lp-feat-title">Closeness<br>&amp; Space</div>
+        <div class="lp-feat-desc">How each of you experiences reassurance, independence and intimacy.</div>
+      </div>
+      <div class="lp-feat-card">
+        <div class="lp-feat-icon">
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#f5c842" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg>
+        </div>
+        <div class="lp-feat-title">Communication<br>&amp; Conflict</div>
+        <div class="lp-feat-desc">How you talk, listen and repair after disagreements.</div>
+      </div>
+      <div class="lp-feat-card">
+        <div class="lp-feat-icon">
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#f5c842" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg>
+        </div>
+        <div class="lp-feat-title">Values, Money<br>&amp; Family</div>
+        <div class="lp-feat-desc">Where your life priorities and practical expectations match, or differ.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="lp-divider"></div>
+
+  <div class="lp-steps">
+    <p class="lp-section-label">✦ How It Works</p>
+    <div class="lp-step-row">
+      <div class="lp-step-num">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
+      </div>
+      <div>
+        <div class="lp-step-title">Each Partner Answers 120 Questions</div>
+        <div class="lp-step-desc">Take turns on one device, or invite your partner with a private link if you're apart.</div>
+      </div>
+    </div>
+    <div class="lp-step-row">
+      <div class="lp-step-num">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+      </div>
+      <div>
+        <div class="lp-step-title">Unlock the Combined Report</div>
+        <div class="lp-step-desc">See answer similarity, personality and attachment comparisons, and the biggest differences to discuss.</div>
+      </div>
+    </div>
+    <div class="lp-step-row">
+      <div class="lp-step-num">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+      </div>
+      <div>
+        <div class="lp-step-title">Download &amp; Discuss</div>
+        <div class="lp-step-desc">Save a PDF report and use it as a conversation map, not a pass/fail test.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="lp-divider"></div>
+
+  <div class="lp-final-cta">
+    <h2 class="lp-final-title">Ready to Understand<br>How You Fit Together?</h2>
+    <p class="lp-final-sub">Similarity isn't the same as compatibility, but knowing where you differ is the first step to talking about it well.</p>
+    <button class="lp-final-btn" onclick="launch(window.__role==='partner'?'partner':'device')">✦ &nbsp;Begin Your Assessment&nbsp; ✦</button>
+  </div>
+
+  <div class="lp-footer">
+    <p>© <span id="yr"></span> Medicos Plus · All rights reserved</p>
+    <p>This is an educational self-reflection questionnaire, not a validated clinical instrument. It does not diagnose and cannot predict whether a relationship or marriage will succeed.</p>
+  </div>
+</div>
+
+<!-- ═══════════════ TRANSITION OVERLAY ═══════════════ -->
+<div id="transition-overlay">
+  <div class="overlay-logo">
+    <svg viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm4 11h-3v3a1 1 0 01-2 0v-3H8a1 1 0 010-2h3V8a1 1 0 012 0v3h3a1 1 0 010 2z"/></svg>
+  </div>
+  <div class="overlay-text">Preparing Your Assessment</div>
+  <div class="overlay-sub">Loading your questionnaire…</div>
+  <div class="overlay-bar"><div class="overlay-bar-fill"></div></div>
+</div>
+
+<!-- ═══════════════ APP SECTION ═══════════════ -->
+<div id="app-section">
+
+  <div class="app-header">
+    <div class="app-header-logo">
+      <svg viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm4 11h-3v3a1 1 0 01-2 0v-3H8a1 1 0 010-2h3V8a1 1 0 012 0v3h3a1 1 0 010 2z"/></svg>
+    </div>
+    <div>
+      <div class="app-header-name">MEDICOS<span>PLUS</span></div>
+      <div class="app-header-tag">Relationship Compatibility</div>
+    </div>
+    <button class="back-btn" onclick="goBack()">← Back</button>
+  </div>
+
+  <div class="app-container">
+
+    <!-- CONSENT -->
+    <div id="consent" class="card hidden">
+      <h2 class="h-serif">Before you begin</h2>
+      <p class="p-soft" id="consentModeText"></p>
+      <p class="p-soft">This self-reflection questionnaire compares two people's responses across personality, attachment tendencies, relationship satisfaction, values, communication, and financial/family expectations. <b>120 questions per person · English.</b></p>
+      <div class="notice"><b>Important:</b> This is an educational, custom-built questionnaire inspired by established psychological constructs. It is not a validated clinical instrument, does not diagnose attachment style, and cannot predict whether a relationship or marriage will succeed. Please don't share highly sensitive information.</div>
+      <label class="agree-row">
+        <input type="checkbox" id="agree">
+        <span>I understand and agree to the consent, privacy notice and terms of this assessment.</span>
+      </label>
+      <button class="btn btn-gold" onclick="startTest()">Begin Assessment →</button>
+    </div>
+
+    <!-- TEST -->
+    <div id="test" class="hidden">
+      <div class="card">
+        <div class="person-tabs" id="personTabs">
+          <button class="tab active" id="tabA">Person A</button>
+          <button class="tab" id="tabB">Person B</button>
+        </div>
+        <div class="small-muted" id="counter"></div>
+        <div class="progress"><div class="progress-bar" id="progressFill"></div></div>
+        <div class="q-domain" id="domainPill"></div>
+        <div class="q-text" id="questionText"></div>
+        <div class="small-muted" id="scaleHint"></div>
+        <div class="options" id="options"></div>
+        <div class="nav">
+          <button class="btn btn-ghost" id="prevBtn">Previous</button>
+          <button class="btn btn-gold" id="nextBtn">Save &amp; next</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- LONG-DISTANCE: PERSON A DONE -->
+    <div id="invitePanel" class="card hidden">
+      <h2 class="h-serif">Person A is complete ✓</h2>
+      <div id="fileWarn" class="notice error hidden"><b>Heads-up:</b> this page is open from your own computer, so these links won't work for your partner until the site is hosted online (for example on GitHub Pages).</div>
+
+      <div class="step-label">Step 1 · Send this link to your partner</div>
+      <p class="p-soft">They open it on their own phone or computer and complete Person B's questionnaire. They will not see your answers.</p>
+      <input class="field" id="partnerLinkField" readonly>
+      <div class="btn-row">
+        <button class="btn btn-gold" id="copyPartnerBtn">Copy partner link</button>
+        <a class="btn btn-ghost" id="waPartnerBtn" target="_blank" rel="noopener" style="text-decoration:none;display:inline-block">Share on WhatsApp</a>
+      </div>
+
+      <div class="step-label">Step 2 · Open your partner's results</div>
+      <p class="p-soft">When your partner finishes, they'll send you a results link. Open it in this same browser, or paste it (or just the code) here:</p>
+      <textarea class="field" id="partnerResultInput" placeholder="Paste your partner's results link or code…"></textarea>
+      <div class="btn-row"><button class="btn btn-gold" id="openCombinedBtn">Continue to combined report</button></div>
+      <div id="inviteMsg" class="notice error hidden"></div>
+
+      <div class="step-label">Your private backup code</div>
+      <p class="small-muted">Your answers are saved in this browser. If you ever open the results on another device or clear your browser data, you'll need this code. Keep it private and don't send it to your partner.</p>
+      <input class="field" id="backupField" readonly style="margin-top:8px">
+      <div class="btn-row"><button class="btn btn-ghost" id="copyBackupBtn">Copy my backup code</button></div>
+    </div>
+
+    <!-- LONG-DISTANCE: PERSON B DONE -->
+    <div id="partnerDone" class="card hidden">
+      <h2 class="h-serif">Thank you, your questionnaire is complete ✓</h2>
+      <p class="p-soft">Send the link below to the person who invited you (Person A). They'll use it to see the combined report. You won't see their answers.</p>
+      <input class="field" id="resultsLinkField" readonly>
+      <div class="btn-row">
+        <button class="btn btn-gold" id="copyResultsBtn">Copy results link</button>
+        <a class="btn btn-ghost" id="waResultsBtn" target="_blank" rel="noopener" style="text-decoration:none;display:inline-block">Share on WhatsApp</a>
+      </div>
+      <div class="notice">Your answers are stored inside this link (not on a server). Only send it to the person who invited you.</div>
+    </div>
+
+    <!-- LONG-DISTANCE: OWNER OPENED RESULTS LINK, NEEDS BACKUP CODE -->
+    <div id="ownerGate" class="card hidden">
+      <h2 class="h-serif">Open your combined report</h2>
+      <div id="ownerMsg" class="notice hidden"></div>
+      <div id="ownerCodeBox">
+        <p class="p-soft">Your partner's answers are in this link, but your own answers weren't found in this browser. Paste the private backup code you saved when you finished Person A's questionnaire:</p>
+        <textarea class="field" id="ownerBackupInput" placeholder="Paste your backup code (starts with RA1-)…"></textarea>
+        <div class="btn-row"><button class="btn btn-gold" id="ownerUnlockBtn">Continue</button></div>
+      </div>
+    </div>
+
+    <!-- PAYMENT -->
+    <div id="payment" class="card hidden">
+      <h2 class="h-serif">Unlock Your Compatibility Report</h2>
+      <p class="p-soft">Both questionnaires are complete. Unlock the full side-by-side report, with comparisons, differences to discuss and a downloadable PDF.</p>
+      <div class="price-big" id="priceBig"></div>
+      <button class="btn btn-gold" id="payBtn" onclick="payNow()" style="padding:15px 32px;font-size:16px">Pay &amp; Unlock Report</button>
+      <div id="payMsg" class="notice error hidden"></div>
+      <p class="small-muted" style="margin-top:14px">Secure checkout by Razorpay. Your payment details are handled by Razorpay and never touch this page.</p>
+    </div>
+
+    <!-- REPORT -->
+    <div id="report" class="hidden">
+      <div class="paper" id="reportPaper">
+        <h2>Comparative report</h2>
+        <p class="muted">Scores are descriptive averages. Interpret them alongside the individual answers and real-life conversations.</p>
+        <div id="reportContent"></div>
+        <p class="small" id="payRef"></p>
+      </div>
+      <div class="btn-row no-print">
+        <button class="btn btn-gold" id="pdfBtn">📄 Download PDF report</button>
+        <button class="btn btn-ghost" id="downloadBtn">Download as HTML</button>
+        <button class="btn btn-ghost" id="printBtn">Print report</button>
+        <button class="btn btn-ghost" id="restartBtn">Restart</button>
+      </div>
+    </div>
+
+    <div class="app-footer" style="margin-top:22px">
+      Privacy: this page has no server and does not upload your answers anywhere. In "same device" mode answers exist only in this browser tab. In long-distance mode, Person A's answers are saved in A's browser (plus a private backup code) and Person B's answers travel inside the results link B sends back. Those links and codes are not encrypted, so share them only with your partner. Payments are processed by Razorpay.
+    </div>
+
+  </div>
+</div>
+
+<div id="pdfStage"></div>
+
+<script>
+/* ═════════════ CONFIG: edit these before you publish ═════════════ */
+const CONFIG = {
+  RAZORPAY_KEY_ID: 'rzp_live_SQlUdrJ5qgJEl3', // your Razorpay KEY ID (public). Never put the Key SECRET in this file.
+  AMOUNT_PAISE: 100,                           // price in paise: 100 = ₹1, 29900 = ₹299
+  CURRENCY: 'INR',
+  BRAND_NAME: 'Medicos Plus',
+  PRODUCT_NAME: 'Relationship Compatibility Assessment',
+  THEME_COLOR: '#c9971a'
+};
+
+/* ── PARTICLES ── */
+(function(){
+  const c = document.getElementById('particles');
+  const ctx = c.getContext('2d');
+  let dots = [];
+  function resize(){ c.width=innerWidth; c.height=innerHeight; }
+  resize(); window.addEventListener('resize', resize);
+  for(let i=0;i<60;i++) dots.push({
+    x:Math.random()*innerWidth, y:Math.random()*innerHeight,
+    r:Math.random()*1.5+0.5,
+    vx:(Math.random()-0.5)*0.3, vy:(Math.random()-0.5)*0.3,
+    a:Math.random()
+  });
+  (function loop(){
+    ctx.clearRect(0,0,c.width,c.height);
+    dots.forEach(d=>{
+      ctx.beginPath();
+      ctx.arc(d.x,d.y,d.r,0,Math.PI*2);
+      ctx.fillStyle=`rgba(245,200,66,${d.a*0.6})`;
+      ctx.fill();
+      d.x+=d.vx; d.y+=d.vy;
+      if(d.x<0||d.x>c.width) d.vx*=-1;
+      if(d.y<0||d.y>c.height) d.vy*=-1;
+    });
+    requestAnimationFrame(loop);
+  })();
+})();
+
+const questions = [];
+function add(domain,sub,items,scale=5,reverse=[]){items.forEach((text,i)=>questions.push({domain,sub,text,scale,reverse:reverse.includes(i)}));}
+add("Big Five","Openness",[
+"I enjoy exploring new ideas and concepts.","I like trying new experiences, even when they involve uncertainty.","I am interested in art, culture, philosophy or intellectual discussions.","I prefer an adventurous lifestyle over a predictable routine.","I am open to changing my opinions when presented with convincing evidence."
+]);
+add("Big Five","Conscientiousness",[
+"I plan my activities and follow schedules.","I complete responsibilities even when I don't feel motivated.","I carefully consider the consequences before making decisions.","I am financially and personally disciplined.","I frequently procrastinate on important responsibilities."
+],5,[4]);
+add("Big Five","Extraversion",[
+"I enjoy meeting new people.","I feel comfortable expressing myself in social situations.","I enjoy attending social gatherings and events.","I prefer spending most of my free time alone.","I naturally take initiative in social situations."
+],5,[3]);
+add("Big Five","Agreeableness",[
+"I try to understand other people's feelings.","I am willing to compromise to maintain healthy relationships.","I treat people with kindness, even during disagreements.","I find it difficult to forgive people who hurt me.","I value cooperation more than competition in personal relationships."
+],5,[3]);
+add("Big Five","Emotional reactivity",[
+"I become anxious when situations are uncertain.","Small problems can significantly affect my mood.","I frequently worry about things that might happen.","I remain calm during stressful situations.","I sometimes struggle to control my emotional reactions."
+],5,[3]);
+add("Attachment","Anxiety",[
+"I worry that my partner might stop loving me.","I am afraid that my partner may abandon me.","I need frequent reassurance that my partner loves me.","I become anxious when my partner does not respond to my messages.","I worry that my partner is not as emotionally invested as I am.","I sometimes feel insecure about my partner's commitment.","I become jealous when my partner gives attention to other people.","I worry about losing my partner even when things are going well.","I need to know that I am important in my partner's life.","I sometimes interpret emotional distance as rejection."
+],7);
+add("Attachment","Avoidance",[
+"I find it difficult to share my deepest feelings.","I prefer solving emotional problems independently.","I feel uncomfortable depending on another person.","I find it difficult to ask my partner for emotional support.","I need considerable personal space, even in a committed relationship.","I feel uncomfortable when someone becomes emotionally dependent on me.","I find it difficult to discuss my vulnerabilities.","I sometimes withdraw when my partner wants emotional closeness.","I prefer maintaining independence rather than relying heavily on my partner.","I feel uncomfortable discussing sensitive personal issues."
+],7);
+add("Relationship satisfaction","Satisfaction",[
+"I am happy with the overall quality of my relationship.","My partner understands my emotional needs.","I feel loved and appreciated in this relationship.","My partner makes sufficient effort to maintain the relationship.","I am satisfied with the amount of quality time we spend together.","I feel respected by my partner.","I can be myself without fear of judgment.","I feel confident about our future together.","My emotional and physical needs are adequately fulfilled.","I feel that our relationship is improving over time.","I sometimes regret entering this relationship.","I feel that the relationship is one-sided.","I am satisfied with our level of intimacy.","I would choose this relationship again if I could make the decision today.","Overall, I consider this a healthy relationship."
+],5,[10,11]);
+add("Personal values","Values",[
+"Honesty is more important than avoiding an uncomfortable conversation.","Family should be a major priority in my life.","Personal freedom is essential, even after marriage.","Both partners should have equal decision-making authority.","Religious or spiritual beliefs should influence important family decisions.","Career development should remain important after marriage.","I value financial security more than luxury and status.","Couples should maintain friendships and individual interests outside their relationship.","Loyalty is one of the most important qualities in a partner.","I am willing to change my lifestyle for the long-term well-being of my relationship.","I want to have children in the future.","I would prefer living independently rather than with parents or extended family.","I am willing to relocate to another city or country for my partner's career.","Both partners should contribute to household responsibilities.","I want to maintain a similar lifestyle and standard of living throughout our marriage.","I expect my partner to support my professional ambitions.","Major decisions should always be made jointly.","I would prioritize my relationship over career opportunities in certain circumstances.","Both partners should maintain relationships with each other's families.","I am comfortable with my partner having different political, religious or cultural opinions from mine."
+]);
+add("Communication","Communication and conflict",[
+"I openly communicate my feelings to my partner.","I listen carefully before responding during disagreements.","I can discuss uncomfortable topics without becoming defensive.","I feel comfortable telling my partner when something hurts me.","I expect my partner to understand my feelings without me explaining them.","I can admit when I am wrong.","I avoid hiding important information from my partner.","I respect my partner's opinions, even when I disagree.","I can discuss sensitive topics such as money, intimacy and family expectations.","I feel heard and understood by my partner.","I prefer resolving arguments immediately rather than postponing them.","I need time alone to calm down before discussing a disagreement.","I can disagree without insulting or humiliating my partner.","I sometimes use silence to express anger.","I am willing to apologize when I hurt my partner.","I avoid bringing up past mistakes during new arguments.","I can compromise without feeling that I have lost control.","Both partners should take responsibility for resolving conflicts.","I can discuss problems without threatening to end the relationship.","After an argument, I make an effort to restore emotional closeness."
+],5,[4,13]);
+add("Financial and family","Financial and family expectations",[
+"Both partners should have transparency regarding their income.","Both partners should disclose their existing loans and debts.","Major financial decisions should be made jointly.","I prefer maintaining a joint bank account after marriage.","Each partner should retain some independent money.","I am comfortable with my partner earning significantly more than me.","Both partners should contribute financially according to their abilities.","I prefer saving and investing rather than spending on luxury.","I am comfortable financially supporting my parents after marriage.","Financial assistance to extended family should be discussed jointly.","I am comfortable taking a home loan or other long-term financial commitments.","Partners should discuss large purchases before making them.","I would be comfortable with my partner taking a career break if financially feasible.","Financial independence is important for both partners.","My partner should disclose significant financial losses or investments.","I want children after marriage.","Both partners should share parenting responsibilities.","I am comfortable living with my parents or in-laws.","I expect my partner to participate in family functions and responsibilities.","I expect both families to respect our privacy as a couple."
+]);
+
+const answers={A:Array(120).fill(null),B:Array(120).fill(null)};
+let person="A",index=0;
+const $=id=>document.getElementById(id);
+const labels5=["Strongly disagree","Disagree","Neutral","Agree","Strongly agree"];
+const labels7=["Strongly disagree","Disagree","Slightly disagree","Neutral","Slightly agree","Agree","Strongly agree"];
+
+/* ═════════════ Scoring & report (unchanged from the original project) ═════════════ */
+function scored(i,p){const q=questions[i],v=answers[p][i];return v===null?null:(q.reverse?q.scale+1-v:v)}
+function mean(indices,p){const vals=indices.map(i=>scored(i,p)).filter(v=>v!==null);return vals.length?vals.reduce((a,b)=>a+b,0)/vals.length:null}
+function fmt(v){return v===null?"—":v.toFixed(2)}
+function indices(domain,sub){return questions.map((q,i)=>q.domain===domain&&(!sub||q.sub===sub)?i:-1).filter(i=>i>=0)}
+function similarity(domain){
+ const ids=indices(domain),gaps=ids.filter(i=>answers.A[i]!==null&&answers.B[i]!==null).map(i=>Math.abs(scored(i,"A")-scored(i,"B"))/4);
+ return gaps.length?100*(1-gaps.reduce((a,b)=>a+b,0)/gaps.length):null;
+}
+function sectionRow(label,sub,domain=label){
+ const ids=indices(domain,sub);
+ return `<tr><td>${label}</td><td>${fmt(mean(ids,"A"))}</td><td>${fmt(mean(ids,"B"))}</td></tr>`;
+}
+function category(v,highLabel,lowLabel){
+ if(v===null)return "Not available";
+ if(v<2.5)return lowLabel;
+ if(v<3.5)return "Moderate";
+ return highLabel;
+}
+function showReport(){
+ showView("report");
+ const A=(d,s)=>mean(indices(d,s,d),"A");
+ const B=(d,s)=>mean(indices(d,s,d),"B");
+ const bar=(label,a,b,max=5)=>{
+  const aw=a===null?0:Math.max(0,Math.min(100,a/max*100));
+  const bw=b===null?0:Math.max(0,Math.min(100,b/max*100));
+  return `<div class="scoreline"><span>${label}</span><div class="track"><span class="fill-a" style="width:${aw}%"></span><span class="fill-b" style="width:${bw}%"></span></div><b>${fmt(a)} / ${fmt(b)}</b></div>`;
+ };
+ const similarityTag=(v)=>v>=85?'<span class="tag good">Very similar answers</span>':v>=70?'<span class="tag">Some differences</span>':'<span class="tag watch">Discuss differences</span>';
+ const level=(v,max=5)=>v===null?"Not available":v<2.5?"Lower endorsement":v<3.5?"Moderate endorsement":"Higher endorsement";
+ const attachmentSummary=(anx,av)=>{
+  const anxiety=anx>=5?"higher reassurance / abandonment concerns":anx<3.5?"lower endorsement of attachment-anxiety statements":"moderate attachment-anxiety responses";
+  const avoidance=av>=5?"greater preference for emotional distance or self-reliance":av<3.5?"lower endorsement of emotional-distance statements":"moderate preference for independence";
+  return anxiety+" and "+avoidance;
+ };
+ const bigTraits=[["Openness","Openness"],["Conscientiousness","Conscientiousness"],["Extraversion","Extraversion"],["Agreeableness","Agreeableness"],["Emotional reactivity","Emotional reactivity"]];
+ let out=`<div class="report-intro"><h3 style="margin:0 0 6px">Your relationship snapshot</h3><p>Think of this as a conversation map, not a pass/fail test. Blue represents Person A; teal represents Person B. Longer bars mean a higher average response, not a better person or partner.</p><div class="legend"><span>Person A</span><span class="b">Person B</span></div></div>`;
+ out+=`<div class="report-grid">
+ <div class="report-card"><h4>Personal values</h4><div class="big">${similarity("Personal values").toFixed(0)}%</div>${similarityTag(similarity("Personal values"))}<p class="small">How similarly you answered values questions.</p></div>
+ <div class="report-card"><h4>Communication</h4><div class="big">${similarity("Communication").toFixed(0)}%</div>${similarityTag(similarity("Communication"))}<p class="small">How similarly you answered communication questions.</p></div>
+ <div class="report-card"><h4>Financial & family</h4><div class="big">${similarity("Financial and family").toFixed(0)}%</div>${similarityTag(similarity("Financial and family"))}<p class="small">How similarly you answered practical expectations.</p></div>
+ </div>`;
+ out+=`<div class="domain-head"><h3>1. Personality: how you tend to operate</h3><span class="tag">Big Five · 1–5</span></div><div class="report-card"><div class="legend"><span>Person A</span><span class="b">Person B</span></div>`;
+ bigTraits.forEach(([label,sub])=>out+=bar(label,mean(indices("Big Five",sub),"A"),mean(indices("Big Five",sub),"B")));
+ out+=`<p class="small">Read the bars as tendencies, not strengths or weaknesses. Emotional reactivity is different from emotional stability: a higher score means more endorsement of worry/reactivity statements.</p></div>`;
+ const opennessGap=Math.abs(mean(indices("Big Five","Openness"),"A")-mean(indices("Big Five","Openness"),"B"));
+ const agreeGap=Math.abs(mean(indices("Big Five","Agreeableness"),"A")-mean(indices("Big Five","Agreeableness"),"B"));
+ const reactA=mean(indices("Big Five","Emotional reactivity"),"A"),reactB=mean(indices("Big Five","Emotional reactivity"),"B");
+ out+=`<div class="insight ${opennessGap>=1?"warn":"good"}"><b>In simple terms:</b> ${opennessGap>=1?"Your openness scores differ noticeably. One person may prefer familiar routines while the other may enjoy novelty and change. Plan a balance of familiar activities and new experiences.":"Your openness scores are relatively close, suggesting similar reported comfort with novelty and new ideas."} ${Math.abs(reactA-reactB)>=0.7?"Your emotional-reactivity scores also differ; discuss what support each person finds helpful during stressful periods.":"Your emotional-reactivity scores are relatively close."}</div>`;
+ out+=`<div class="domain-head"><h3>2. Attachment: closeness and space</h3><span class="tag">Adapted items · 1–7</span></div><div class="report-card"><div class="legend"><span>Person A</span><span class="b">Person B</span></div>`;
+ out+=bar("Anxiety",mean(indices("Attachment","Anxiety"),"A"),mean(indices("Attachment","Anxiety"),"B"),7);
+ out+=bar("Avoidance",mean(indices("Attachment","Avoidance"),"A"),mean(indices("Attachment","Avoidance"),"B"),7);
+ out+=`<p class="small">Anxiety items concern reassurance and fear of rejection. Avoidance items concern discomfort with dependence, vulnerability or closeness. Higher is not a diagnosis.</p></div>`;
+ const aa=mean(indices("Attachment","Anxiety"),"A"),ba=mean(indices("Attachment","Anxiety"),"B"),avA=mean(indices("Attachment","Avoidance"),"A"),avB=mean(indices("Attachment","Avoidance"),"B");
+ out+=`<div class="report-grid"><div class="report-card"><h4>Person A</h4><p><b>Anxiety:</b> ${level(aa,7)}</p><p><b>Avoidance:</b> ${level(avA,7)}</p><p class="small">${attachmentSummary(aa,avA)}.</p></div><div class="report-card"><h4>Person B</h4><p><b>Anxiety:</b> ${level(ba,7)}</p><p><b>Avoidance:</b> ${level(avB,7)}</p><p class="small">${attachmentSummary(ba,avB)}.</p></div></div>`;
+ out+=`<div class="insight warn"><b>What to watch for:</b> If one partner seeks reassurance while the other needs space, the first may experience distance as rejection and the second may experience repeated reassurance requests as pressure. Try saying: “I need a little reassurance” or “I need 30 minutes to reset, and then I will come back to this conversation.” This is a possible pattern to explore, not something the scores prove.</div>`;
+ out+=`<div class="domain-head"><h3>3. Relationship satisfaction</h3><span class="tag">1–5</span></div>`;
+ const satA=mean(indices("Relationship satisfaction"),"A"),satB=mean(indices("Relationship satisfaction"),"B");
+ out+=`<div class="report-grid"><div class="report-card"><h4>Person A</h4><div class="big">${fmt(satA)}<span class="small"> / 5</span></div><div class="bar"><span style="width:${satA/5*100}%"></span></div></div><div class="report-card"><h4>Person B</h4><div class="big">${fmt(satB)}<span class="small"> / 5</span></div><div class="bar"><span style="width:${satB/5*100}%"></span></div></div></div>`;
+ out+=`<div class="insight"><b>How to read this:</b> The average is a broad snapshot. A difference in one specific item—such as feeling loved, having quality time or confidence about the future—can matter more than the overall average. Review the largest item-level differences below.</div>`;
+ out+=`<div class="domain-head"><h3>4. Shared expectations</h3><span class="tag">Answer similarity</span></div>`;
+ [["Personal values","Personal values"],["Communication","Communication"],["Financial & family","Financial and family"]].forEach(([label,d])=>{
+  const v=similarity(d);out+=`<div class="report-card"><div class="domain-head" style="margin:0"><b>${label}</b><b>${v.toFixed(1)}%</b></div><div class="bar"><span style="width:${v}%"></span></div><p class="small">${v>=85?"Many answers were close. Confirm that you mean the same thing by key terms.":v>=70?"There are some different answers. Identify the exact topics behind them.":"Answers differ across several items. Discuss priorities one by one rather than assuming agreement."}</p></div>`;
+ });
+ out+=`<div class="domain-head"><h3>5. Biggest differences to discuss</h3><span class="tag">Top 10 items</span></div><p class="small">These are the questions with the largest answer gaps after reverse scoring where applicable. A gap is a prompt for conversation—not a red flag by itself.</p><div class="report-card"><table><thead><tr><th>Question</th><th>A</th><th>B</th><th>Gap</th></tr></thead><tbody>`;
+ const allGaps=questions.map((q,i)=>({q,i,a:scored(i,"A"),b:scored(i,"B"),gap:Math.abs(scored(i,"A")-scored(i,"B"))})).sort((x,y)=>y.gap-x.gap).slice(0,10);
+ allGaps.forEach(x=>out+=`<tr><td><b>${x.q.domain}</b><br>${x.q.text}</td><td>${x.a}</td><td>${x.b}</td><td>${x.gap}</td></tr>`);
+ out+=`</tbody></table></div>`;
+ out+=`<div class="domain-head"><h3>6. Simple action plan</h3></div><div class="simple-steps">
+ <div><b>❤️ Feel connected</b>Ask what helps each person feel loved, secure and appreciated.</div>
+ <div><b>🧭 Agree on priorities</b>Discuss children, living arrangements, careers and family boundaries.</div>
+ <div><b>💬 Handle conflict</b>Agree on respectful time-outs and when to resume a difficult conversation.</div>
+ <div><b>💰 Plan money</b>Discuss debts, savings, personal spending and support for parents.</div>
+ </div><div class="alert"><b>Remember:</b> Similarity is not the same as compatibility. Partners can differ and still build a healthy relationship when they understand the difference and can negotiate respectfully.</div>`;
+ out+=`<h3>7. Important limitations</h3><p class="small">This custom questionnaire is inspired by psychological concepts but is not a validated combined test. The attachment items are adapted rather than the original ECR-R; the other sections are also custom items. Scores should not be used to diagnose either person or predict marriage success, divorce or relationship longevity.</p>`;
+ $("reportContent").innerHTML=out;
+ $("report").scrollIntoView({behavior:"smooth"});
+}
+
+/* ═════════════ App flow ═════════════ */
+document.getElementById("yr").textContent=new Date().getFullYear();
+
+const qp=new URLSearchParams(location.search);
+const role=qp.get("role");
+window.__role=role;
+let mode = role==="partner"?"partner":role==="owner"?"owner":"device"; // device | invite | partner | owner
+const BASE=location.href.split(/[?#]/)[0];
+const VIEWS=["consent","test","invitePanel","partnerDone","ownerGate","payment","report"];
+let paymentId=null;
+
+const store={
+  get(k){try{return localStorage.getItem(k)}catch(e){return null}},
+  set(k,v){try{localStorage.setItem(k,v)}catch(e){}},
+  del(k){try{localStorage.removeItem(k)}catch(e){}}
+};
+
+function showView(id){
+  VIEWS.forEach(v=>$(v).classList.toggle("hidden",v!==id));
+  window.scrollTo({top:0,behavior:"smooth"});
+}
+
+/* ── Landing → app ── */
+function openApp(immediate){
+  const go=()=>{
+    $("transition-overlay").classList.remove("active");
+    $("landing-page").style.display="none";
+    $("app-section").style.display="block";
+    window.scrollTo(0,0);
+  };
+  if(immediate){go();return;}
+  $("transition-overlay").classList.add("active");
+  setTimeout(go,1600);
+}
+function launch(m){
+  mode=m;
+  answers.A.fill(null);answers.B.fill(null);paymentId=null;person=(m==="partner")?"B":"A";index=0;
+  const t={
+    device:"You'll complete this together on one device. <b>Person A answers all 120 questions first, then Person B.</b> Please answer independently and honestly.",
+    invite:"<b>You're Person A.</b> You'll answer your 120 questions first. Afterwards you'll get a private link to send to your partner so they can complete Person B's questionnaire on their own device.",
+    partner:"<b>You're Person B.</b> You'll answer 120 questions on your own. You will not see Person A's answers. When you finish, you'll get a results link to send back to the person who invited you."
+  };
+  $("consentModeText").innerHTML=t[m];
+  showView("consent");
+  openApp(false);
+}
+function goBack(){
+  const anyAnswer=answers.A.some(v=>v!==null)||answers.B.some(v=>v!==null);
+  if(anyAnswer&&!confirm("Go back to the home page? Answers that are not saved will be lost.")) return;
+  if(mode==="owner"){location.href=BASE;return;}
+  answers.A.fill(null);answers.B.fill(null);
+  $("app-section").style.display="none";
+  $("landing-page").style.display="block";
+  window.scrollTo(0,0);
+}
+
+function startTest(){
+  if(!$("agree").checked){alert("Please accept the consent agreement to continue.");return;}
+  person=(mode==="partner")?"B":"A";index=0;
+  $("personTabs").classList.toggle("hidden",mode!=="device");
+  showView("test");render();
+}
+
+/* ── Question screen ── */
+function lastLabel(){
+  if(mode==="partner")return "Finish & get my results link";
+  if(mode==="invite")return "Finish & create invitation";
+  return person==="A"?"Finish Person A":"Finish & continue";
+}
+function render(){
+ const q=questions[index],a=answers[person];
+ $("counter").textContent=`Person ${person} · Question ${index+1} of ${questions.length} · ${Math.round((index+1)/questions.length*100)}%`;
+ $("progressFill").style.width=((index+1)/questions.length*100)+"%";
+ $("domainPill").textContent=q.domain+" — "+q.sub;
+ $("questionText").textContent=q.text;
+ $("scaleHint").textContent=q.scale===7?"Scale: 1 = Strongly disagree · 7 = Strongly agree":"Scale: 1 = Strongly disagree · 5 = Strongly agree";
+ $("options").innerHTML="";
+ for(let n=1;n<=q.scale;n++){
+  const label=document.createElement("label");label.className="option"+(a[index]===n?" selected":"");
+  const input=document.createElement("input");input.type="radio";input.name="answer";input.value=n;input.checked=a[index]===n;
+  input.addEventListener("change",()=>{a[index]=n;[...$("options").children].forEach(l=>l.classList.remove("selected"));label.classList.add("selected");});
+  const span=document.createElement("span");span.textContent=`${n} — ${(q.scale===7?labels7:labels5)[n-1]}`;
+  label.append(input,span);$("options").append(label);
+ }
+ $("prevBtn").disabled=index===0;
+ $("nextBtn").textContent=index===119?lastLabel():"Save & next";
+ $("tabA").className="tab"+(person==="A"?" active":"");$("tabB").className="tab"+(person==="B"?" active":"");
+}
+$("tabA").onclick=()=>{person="A";index=0;render()};
+$("tabB").onclick=()=>{person="B";index=0;render()};
+$("prevBtn").onclick=()=>{if(index>0){index--;render()}};
+$("nextBtn").onclick=()=>{
+ if(answers[person][index]===null){alert("Please select an answer before continuing.");return;}
+ if(index<119){index++;render();return;}
+ if(mode==="partner")return finishPartner();
+ if(mode==="invite")return finishInviteA();
+ if(person==="A"){person="B";index=0;alert("Person A is complete. Now Person B can complete the same questionnaire.");render();return;}
+ proceedToPayment();
+};
+
+/* ── Answer codes (long-distance mode, no server) ──
+   Format: RA1-<120 digits> for Person A, RB1-<120 digits> for Person B. */
+const CODE_RE=/R([AB])1-([1-7]{120})/;
+function encodeAnswers(p){return "R"+p+"1-"+answers[p].join("");}
+function decodeCode(text,expect){
+  const m=String(text||"").match(CODE_RE);
+  if(!m||(expect&&m[1]!==expect))return null;
+  const arr=m[2].split("").map(Number);
+  for(let i=0;i<120;i++){if(arr[i]>questions[i].scale)return null;}
+  return {person:m[1],answers:arr};
+}
+function copyText(value,btn){
+  const done=()=>{if(btn){const t=btn.textContent;btn.textContent="Copied ✓";setTimeout(()=>btn.textContent=t,1600);}};
+  if(navigator.clipboard&&window.isSecureContext){navigator.clipboard.writeText(value).then(done,()=>prompt("Copy this:",value));}
+  else{prompt("Copy this:",value);}
+}
+
+function finishInviteA(){
+  if(answers.A.some(v=>v===null)){alert("Some Person A questions are unanswered.");return;}
+  const code=encodeAnswers("A");
+  store.set("relComp.A",code);store.del("relComp.paid");
+  const link=BASE+"?role=partner";
+  $("partnerLinkField").value=link;$("backupField").value=code;
+  $("waPartnerBtn").href="https://wa.me/?text="+encodeURIComponent("Hi! Please complete your part of our Relationship Compatibility Assessment (about 120 questions): "+link);
+  $("fileWarn").classList.toggle("hidden",location.protocol!=="file:");
+  $("inviteMsg").classList.add("hidden");
+  showView("invitePanel");
+}
+$("copyPartnerBtn").onclick=e=>copyText($("partnerLinkField").value,e.target);
+$("copyBackupBtn").onclick=e=>copyText($("backupField").value,e.target);
+$("openCombinedBtn").onclick=()=>{
+  const b=decodeCode($("partnerResultInput").value,"B");
+  const msg=$("inviteMsg");
+  if(!b){msg.textContent="That doesn't look like your partner's results link or code. Please paste the full link they sent you.";msg.classList.remove("hidden");return;}
+  if(answers.A.some(v=>v===null)){const a=decodeCode(store.get("relComp.A"),"A");if(a)answers.A=a.answers;}
+  answers.B=b.answers;msg.classList.add("hidden");
+  proceedToPayment();
+};
+
+function finishPartner(){
+  if(answers.B.some(v=>v===null)){alert("Some questions are unanswered.");return;}
+  const link=BASE+"?role=owner#b="+encodeAnswers("B");
+  $("resultsLinkField").value=link;
+  $("waResultsBtn").href="https://wa.me/?text="+encodeURIComponent("I've finished my part of our Relationship Compatibility Assessment. Open this link to see our combined report: "+link);
+  showView("partnerDone");
+}
+$("copyResultsBtn").onclick=e=>copyText($("resultsLinkField").value,e.target);
+
+function loadOwnerMode(){
+  openApp(true);
+  showView("ownerGate");
+  const b=decodeCode(location.hash.replace(/^#/,""),"B");
+  if(!b){
+    $("ownerMsg").innerHTML="<b>This results link is incomplete or damaged.</b> Please ask your partner to send the full link again.";
+    $("ownerMsg").classList.remove("hidden");$("ownerCodeBox").classList.add("hidden");return;
+  }
+  answers.B=b.answers;
+  const a=decodeCode(store.get("relComp.A"),"A");
+  if(a){answers.A=a.answers;proceedToPayment();}
+}
+$("ownerUnlockBtn").onclick=()=>{
+  const a=decodeCode($("ownerBackupInput").value,"A");
+  if(!a){$("ownerMsg").innerHTML="<b>That backup code isn't valid.</b> It should start with RA1- and be about 123 characters long.";$("ownerMsg").classList.remove("hidden");return;}
+  answers.A=a.answers;store.set("relComp.A",encodeAnswers("A"));
+  proceedToPayment();
+};
+
+/* ── Payment (Razorpay Checkout, client-side) ── */
+function priceLabel(){
+  try{return new Intl.NumberFormat("en-IN",{style:"currency",currency:CONFIG.CURRENCY,minimumFractionDigits:0,maximumFractionDigits:2}).format(CONFIG.AMOUNT_PAISE/100);}
+  catch(e){return (CONFIG.AMOUNT_PAISE/100)+" "+CONFIG.CURRENCY;}
+}
+function sessionKey(){return mode==="device"?null:encodeAnswers("B");}
+function isPaid(){
+  if(paymentId)return true;
+  const k=sessionKey();if(!k)return false;
+  try{const s=JSON.parse(store.get("relComp.paid")||"null");if(s&&s.key===k&&s.id){paymentId=s.id;return true;}}catch(e){}
+  return false;
+}
+function firstIncomplete(){for(const p of ["A","B"])if(answers[p].some(v=>v===null))return p;return null;}
+function proceedToPayment(){
+  const miss=firstIncomplete();
+  if(miss){
+    alert(`Person ${miss} still has unanswered questions. Let's finish those first.`);
+    person=miss;index=Math.max(0,answers[miss].findIndex(v=>v===null));
+    $("personTabs").classList.toggle("hidden",mode!=="device");
+    showView("test");render();return;
+  }
+  if(isPaid()){openReport();return;}
+  $("priceBig").textContent=priceLabel();
+  $("payBtn").textContent="Pay "+priceLabel()+" & Unlock Report";
+  $("payMsg").classList.add("hidden");
+  showView("payment");
+}
+function payMessage(html){const m=$("payMsg");m.innerHTML=html;m.classList.remove("hidden");}
+function payNow(){
+  if(typeof Razorpay==="undefined"){payMessage("<b>The payment window couldn't load.</b> Please check your internet connection and reload the page.");return;}
+  $("payMsg").classList.add("hidden");$("payBtn").disabled=true;
+  const options={
+    key:CONFIG.RAZORPAY_KEY_ID,
+    amount:CONFIG.AMOUNT_PAISE,
+    currency:CONFIG.CURRENCY,
+    name:CONFIG.BRAND_NAME+" – Relationship Compatibility",
+    description:"Unlock your combined compatibility report",
+    notes:{product:"relationship-compatibility"},
+    theme:{color:CONFIG.THEME_COLOR},
+    handler:function(response){onPaid(response&&response.razorpay_payment_id);},
+    modal:{ondismiss:function(){$("payBtn").disabled=false;}}
+  };
+  try{
+    const rzp=new Razorpay(options);
+    rzp.on("payment.failed",function(r){
+      $("payBtn").disabled=false;
+      payMessage("<b>Payment failed.</b> "+((r&&r.error&&r.error.description)||"Please try again.")+" You have not been charged for an unlocked report.");
+    });
+    rzp.open();
+  }catch(e){$("payBtn").disabled=false;payMessage("<b>Could not start checkout.</b> Please reload the page and try again.");}
+}
+function onPaid(id){
+  paymentId=id||"paid";
+  $("payBtn").disabled=false;
+  const k=sessionKey();
+  if(k)store.set("relComp.paid",JSON.stringify({key:k,id:paymentId}));
+  openReport();
+}
+
+/* ── Report ── */
+function openReport(){
+  if(!isPaid()){proceedToPayment();return;}
+  showReport();
+  $("payRef").textContent=paymentId&&paymentId!=="paid"?"Payment reference: "+paymentId:"";
+}
+$("printBtn").onclick=()=>window.print();
+$("restartBtn").onclick=()=>{
+  if(!confirm("Clear both people's answers and restart?"+(paymentId?" You'll need to pay again to unlock a new report.":"")))return;
+  answers.A.fill(null);answers.B.fill(null);paymentId=null;
+  store.del("relComp.A");store.del("relComp.paid");
+  location.href=BASE;
+};
+
+function reportHeaderHtml(){
+  const today=new Date().toLocaleDateString("en-IN",{day:"numeric",month:"long",year:"numeric"});
+  return `<div class="pdf-head"><div class="pdf-brand">MEDICOS<span>PLUS</span> · Relationship Compatibility Report</div><div class="pdf-sub">Two-person self-reflection report · Confidential · ${today}</div></div>`;
+}
+
+$("downloadBtn").onclick=()=>{
+  const css=$("reportCss").textContent;
+  const html="<!DOCTYPE html>\n<html lang=\"en\"><head><meta charset=\"UTF-8\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"><title>Relationship Compatibility Report</title><style>*{box-sizing:border-box}body{margin:0;background:#f3f5f9;font:16px/1.5 system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}main{max-width:980px;margin:24px auto;padding:0 16px}.pdf-head{background:#1a1a2e;color:#fff;padding:20px 26px;border-radius:10px;margin-bottom:18px}.pdf-brand{font-size:19px;font-weight:700;letter-spacing:1px}.pdf-brand span{color:#f5c842}.pdf-sub{font-size:12px;color:rgba(255,255,255,.78);margin-top:5px}"+css+"</style></head><body><main>"+reportHeaderHtml()+"<div class=\"paper\">"+$("reportPaper").innerHTML+"</div></main></body></html>";
+  const blob=new Blob([html],{type:"text/html"});
+  const url=URL.createObjectURL(blob),a=document.createElement("a");a.href=url;a.download="relationship-compatibility-report.html";document.body.appendChild(a);a.click();a.remove();URL.revokeObjectURL(url);
+};
+
+$("pdfBtn").onclick=async()=>{
+  const btn=$("pdfBtn");btn.disabled=true;const label=btn.textContent;btn.textContent="Generating PDF… please wait";
+  try{await downloadPDF();}
+  catch(e){alert("Error generating the PDF. Please try again, or use Print / Download as HTML.");console.error(e);}
+  finally{btn.disabled=false;btn.textContent=label;}
+};
+
+async function downloadPDF(){
+  if(!window.jspdf||!window.html2canvas){alert("The PDF tools could not load. Please check your internet connection, or use Print / Download as HTML.");return;}
+  const stage=$("pdfStage");
+  stage.innerHTML=`<div class="paper pdf-paper">${reportHeaderHtml()}<div class="pdf-body">${$("reportContent").innerHTML}</div></div>`;
+  try{
+    if(document.fonts&&document.fonts.ready)await document.fonts.ready;
+    await new Promise(r=>setTimeout(r,500));
+    const paper=stage.firstElementChild;
+    const cv=await html2canvas(paper,{scale:2,useCORS:true,backgroundColor:"#ffffff",logging:false});
+
+    /* find clean places to split pages (between blocks, never right after a heading) */
+    const pr=paper.getBoundingClientRect(),k=cv.width/pr.width;
+    const isHead=el=>el&&el.matches&&el.matches("h3,.domain-head");
+    const breaks=[...paper.querySelectorAll(".pdf-body > *, .pdf-body tr")]
+      .filter(el=>!isHead(el)&&!(el.parentElement.classList.contains("pdf-body")&&isHead(el.previousElementSibling)))
+      .map(el=>Math.round((el.getBoundingClientRect().bottom-pr.top)*k))
+      .filter(v=>v>0).sort((a,b)=>a-b);
+
+    const m=10,cw=190,usableMM=271;                    // A4 with margins, room left for footer
+    const pageH=Math.floor(cv.width*usableMM/cw);
+    const pages=[];let y=0;
+    while(y<cv.height-1){
+      let end=Math.min(y+pageH,cv.height);
+      if(end<cv.height){
+        const c=breaks.filter(b=>b>y+pageH*0.35&&b<=end);
+        if(c.length)end=c[c.length-1];
+      }
+      pages.push([y,end]);y=end;
+    }
+    const {jsPDF}=window.jspdf;
+    const doc=new jsPDF("p","mm","a4");
+    pages.forEach(([s,e],i)=>{
+      const sl=document.createElement("canvas");sl.width=cv.width;sl.height=e-s;
+      const cx=sl.getContext("2d");cx.fillStyle="#ffffff";cx.fillRect(0,0,sl.width,sl.height);
+      cx.drawImage(cv,0,s,cv.width,e-s,0,0,cv.width,e-s);
+      if(i>0)doc.addPage();
+      doc.addImage(sl.toDataURL("image/jpeg",0.92),"JPEG",m,m,cw,(e-s)*cw/cv.width);
+      doc.setFontSize(8);doc.setTextColor(120,120,120);
+      doc.text("Medicos Plus - Relationship Compatibility Assessment - educational self-reflection tool, not a clinical instrument",m,291);
+      doc.text(`Page ${i+1} of ${pages.length}`,200,291,{align:"right"});
+    });
+    doc.save("MedicosPlus_Relationship_Compatibility_Report.pdf");
+  }finally{stage.innerHTML="";}
+}
+
+/* ── Boot: partner / owner links ── */
+if(role==="partner"){
+  $("lp-partner-banner").classList.remove("hidden");
+  $("lp-cta-default").classList.add("hidden");
+  $("lp-cta-partner").classList.remove("hidden");
+}else if(role==="owner"){
+  loadOwnerMode();
+}
+</script>
+</body>
+</html>
